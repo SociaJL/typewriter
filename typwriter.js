@@ -1,63 +1,33 @@
-const sentence = "Hello there from my cave \n"; // \n creates a new line after this string is printed. 
 
-// loop through charactors 
-/*
+
+// variable to created to give our function some data.
+const sentence = "Hello there my beautiful daughter.";
+// variable to start our initialDelay at 1000ms (1sec)
+let initialDelay = 1000
+
+
+// A for loop block is created to loop through our string
 for (const char of sentence) {
-  console.log(char); 
-}; 
-*/
+  // a timeout function is declared to write each char in sentence with an initial delay of the variable "initialDelay"
+  setTimeout(() => { process.stdout.write(char);}, initialDelay); 
+// increases delay by 50ms each iteration by adding 50ms to previous value.
+  initialDelay += 50; 
 
-/* returns 
-H
-e
-l
-l
-o
- 
-t
-h
-e
-r
-e
- 
-f
-r
-o
-m
- 
-m
-y
- 
-c
-a
-v
-e
-*/
+};
 
-// this is because console.log prints a new line every iteration of a loop.
-// can use process.stdout.write to write the output on a single line. 
+
+
+
+
+
+/// *** notes *** 
+
+// process.stdout.write will keep the return on the same line
+// where console.log will return each char on a new line 
 
 /*
-for (const char of sentence) {
-  process.stdout.write(char); 
-}; 
+** setTimeout() syntax
+var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]);
+var timeoutID = scope.setTimeout(function[, delay]);
+var timeoutID = scope.setTimeout(code[, delay]);
 */
-
-// returns -- Hello there from my caveLevesques-MacBook-Pro:d2 cj2k$ 
-// delay the display with setTimeout()
-// this is done within the loop. setTimeout(() => {}, time in milliseconds); 
-// to make the delay dynamic and not return every char withing string all at once...
-//... declare a new variable and set the delay time. variable name += the interval increase amount. 
-
-let delay = 1000 // this allows dynamic changed to the timing 
-  for (const char of sentence) {
-    setTimeout(() => { process.stdout.write(char); 
-      
-  }, delay); // time is set to var delay 
-
-  delay += 50; // sets delay to increase by 50ms each iteration 
-};  
-
-
-
-
